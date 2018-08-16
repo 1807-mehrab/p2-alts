@@ -1,6 +1,13 @@
 package com.revature.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Employee {
+	@Id
 	private long employee_id;
 	private String fname, lname;
 

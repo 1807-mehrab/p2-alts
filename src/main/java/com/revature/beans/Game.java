@@ -1,6 +1,13 @@
 package com.revature.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Game {
+	@Id
 	private long game_id;
 	private String title, price, photo;
 	private int copies;

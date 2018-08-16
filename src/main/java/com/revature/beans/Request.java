@@ -1,10 +1,20 @@
 package com.revature.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Request {
+	@Id
 	private long request_id;
 	private String title, price, photo;
 	private boolean isapproved;
+	@ManyToOne
 	private Client client;
+	@ManyToOne
 	private Manager manager;
 
 	public long getRequest_id() {

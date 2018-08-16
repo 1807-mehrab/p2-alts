@@ -2,12 +2,23 @@ package com.revature.beans;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Report {
+	@Id
 	private long report_id;
 	private String title, body, response;
 	private Date datereported, dateresolved;
+	@ManyToOne
 	private Employee employee;
+	@ManyToOne
 	private Manager manager;
+	@ManyToOne
 	private Client client;
 
 	public long getReport_id() {
