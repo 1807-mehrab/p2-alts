@@ -1,3 +1,8 @@
+CREATE USER gamestoredb
+IDENTIFIED BY  p4ssw0rd;
+
+GRANT connect, resource, create session, create view, create table to gamestoredb
+
 CREATE TABLE clients (
     client_id   NUMBER NOT NULL,
     username    VARCHAR2(50) NOT NULL,
