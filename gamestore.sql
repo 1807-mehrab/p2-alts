@@ -1,3 +1,5 @@
+DROP USER gamestoredb CASCADE;
+
 CREATE USER gamestoredb
 IDENTIFIED BY  p4ssw0rd;
 
