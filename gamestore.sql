@@ -3,7 +3,9 @@ DROP USER gamestoredb CASCADE;
 CREATE USER gamestoredb
 IDENTIFIED BY  p4ssw0rd;
 
-GRANT connect, resource, create session, create view, create table to gamestoredb
+GRANT connect, resource, create session, create view, create table to gamestoredb;
+
+conn gamestoredb/p4ssw0rd;
 
 CREATE TABLE clients (
     client_id   NUMBER NOT NULL,
@@ -62,7 +64,7 @@ ALTER TABLE reports ADD CONSTRAINT reports_pk PRIMARY KEY ( report_id );
 CREATE TABLE requests (
     request_id   NUMBER NOT NULL,
     title        VARCHAR2(100) NOT NULL,
-    price        VARCHAR2(10000) NOT NULL,
+    price        VARCHAR2(100) NOT NULL,
     photo        VARCHAR2(50),
     isapproved   NUMBER,
     client_id    NUMBER NOT NULL,
