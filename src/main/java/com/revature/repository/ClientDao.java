@@ -10,7 +10,6 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Client;
-import com.revature.beans.Manager;
 
 @Repository
 public class ClientDao {
@@ -21,11 +20,11 @@ public class ClientDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Manager> getClients() {
+	public List<Client> getClients() {
 		try {
-			return sessionFactory.getCurrentSession().createCriteria(Manager.class).list();
+			return sessionFactory.getCurrentSession().createCriteria(Client.class).list();
 		} catch (Exception e) {
-			return new ArrayList<Manager>();
+			return new ArrayList<Client>();
 		}
 	}
 
@@ -36,7 +35,7 @@ public class ClientDao {
 
 	public Client getClientByName(String firstname, String lastname) {
 		Session s = sessionFactory.getCurrentSession();
-		Query q = s.createQuery("from Manager where fname = :fname and lname = :lname");
+		Query q = s.createQuery("from Client where fname = :fname and lname = :lname");
 		q.setParameter("fname", firstname);
 		q.setParameter("lname", lastname);
 		return (Client) q.uniqueResult();
