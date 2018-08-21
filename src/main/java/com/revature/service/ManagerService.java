@@ -22,4 +22,29 @@ public class ManagerService {
 	public List<Manager> getAll() {
 		return dao.getManagers();
 	}
+	
+	@Transactional
+	public void add(Manager manager) {
+		dao.addManager(manager);
+	}
+	
+	@Transactional
+	public void delete(Manager manager) {
+		dao.deleteManager(manager);
+	}
+	
+	@Transactional
+	public Manager getById(int id) {
+		return dao.getManagerById(id);
+	}
+	
+	@Transactional
+	public Manager getByName(String fname, String lname) {
+		return dao.getManagerByName(fname, lname);
+	}
+	
+	@Transactional
+	public Manager update(Manager manager) {
+		return dao.updateManager(manager);
+	}
 }
