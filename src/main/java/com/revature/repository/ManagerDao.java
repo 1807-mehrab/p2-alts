@@ -9,7 +9,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
-import com.revature.beans.Manager;;
+import com.revature.beans.Manager;
 
 @Repository
 public class ManagerDao {
