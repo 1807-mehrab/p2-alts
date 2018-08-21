@@ -1,6 +1,7 @@
 package com.revature.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 @Table
 public class Request {
 	@Id
+	@GeneratedValue
 	private long request_id;
 	private String title, price, photo;
 	private boolean isapproved;

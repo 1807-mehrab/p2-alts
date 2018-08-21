@@ -1,6 +1,7 @@
 package com.revature.beans;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 @Table
 public class Employee {
 	@Id
+	@GeneratedValue
 	private long employee_id;
 	private String fname, lname;
 
