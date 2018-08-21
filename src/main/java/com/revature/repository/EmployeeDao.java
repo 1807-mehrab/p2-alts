@@ -3,6 +3,7 @@ package com.revature.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -28,6 +29,14 @@ public class EmployeeDao {
 	public Employee getEmployeeById(int id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Employee) s.get(Employee.class, id);
+	}
+	
+	public Employee getEmployeeByName(String firstname, String lastname) {
+		Session s = sessionFactory.getCurrentSession();
+		Query q = s.createQuery("from Employee where fname = :fname and lname = :lname");
+		q.setParameter("fname", firstname);
+		q.setParameter("lname", lastname);
+		return (Employee) q.uniqueResult();
 	}
 
 	public void addEmployee(Employee employee) {

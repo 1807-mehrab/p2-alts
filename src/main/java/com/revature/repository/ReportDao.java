@@ -48,7 +48,7 @@ public class ReportDao {
 		tx.commit();
 	}
 
-	public Report updateClient(Report report) {
+	public Report updateReport(Report report) {
 		Session s = sessionFactory.getCurrentSession();
 		Transaction tx = s.beginTransaction();
 
