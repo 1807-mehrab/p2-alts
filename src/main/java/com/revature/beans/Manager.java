@@ -10,6 +10,10 @@ public class Manager {
 	@Id
 	private long manager_id;
 	private String username, fname, lname, email, password;
+	
+	public Manager() {
+		
+	}
 
 	public long getClient_id() {
 		return manager_id;

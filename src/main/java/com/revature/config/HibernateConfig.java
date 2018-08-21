@@ -16,6 +16,9 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.revature.repository.ManagerDao;
+import com.revature.service.ManagerService;
+
 @Configuration
 @ComponentScan("com.revature")
 @EnableTransactionManagement
@@ -46,7 +49,8 @@ public class HibernateConfig {
 		return sessionFactory;
 	}
 
-	private Properties hibernateProperties() {
+	@Bean
+	Properties hibernateProperties() {
 		return new Properties() {
 			private static final long serialVersionUID = 1L;
 
@@ -66,4 +70,20 @@ public class HibernateConfig {
 		return tm;
 	}
 
+	@Bean
+	public ManagerDao managerDao(SessionFactory sessionFactory) {
+		ManagerDao dao = new ManagerDao();
+		dao.setSessionFactory(sessionFactory);
+		
+		return dao;
+	}
+	
+	@Bean
+	public ManagerService managerService(ManagerDao dao) {
+		ManagerService service = new ManagerService();
+		service.setDao(dao);
+		
+		return service;
+	}
+	
 }
