@@ -7,7 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('all-games', { path: '/games' });
+  this.route('about',{ path: '/about' });
+  this.route('main',{ path: '/main' } );
   this.route('profile');
+  this.route('sell-game');
+  this.route('cart');
 });
 
 export default Router;

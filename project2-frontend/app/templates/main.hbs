@@ -20,6 +20,7 @@ Released   : 20130919
 <link type="text/css" rel="stylesheet" href="../styles/font.css">
 <link type="text/css" rel="stylesheet" href="../styles/app.css">
 
+
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -28,19 +29,32 @@ Released   : 20130919
 	<div id="header" class="container">
 		<div id="menu">
 			<ul>
-				
-				<li>{{#link-to "all-games" class="button"}}View All Games{{/link-to}}</li>
-				<li>{{#link-to "sell-game" class="button"}}Sell Game{{/link-to}}</li>
-        <li>{{#link-to "cart" class="button"}}Cart{{/link-to}}</li>
-				<li>{{#link-to "main" class="button"}}Logout{{/link-to}}</li>
-        
+				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
+				<li>
+				{{#link-to "about" class="button"}}About{{/link-to}}</li>
+				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 			</ul>
 		</div>
 		<div id="logo">
-			<h1><a href="#">Welcome</a></h1>
+			<h1><a href="#">Not GameStop</a></h1>
 			<span>Template Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a></span> </div>
 	</div>
 </div>
+<div id="wrapper1">
+	<div id="welcome" class="container">
+		<div class="title">
+			<h2>Welcome to our website</h2>
+			<span class="byline">Games At The Tip Of Your Fingers</span> </div>
+		<div class="content">
+			<form class="form">
+			<input type="text" placeholder="Username">
+			<input type="password" placeholder="Password">
+			<button type="submit" id="login-button">Login</button>
+		</form>
+	</div>
+	
+		</div>
+	</div>
 
 <div id="wrapper3">
 	<div id="wrapper-blog" class="container">
@@ -103,33 +117,7 @@ Released   : 20130919
 		</div>
 	</div>
 </div>
-<div id="wrapper2">
-	<div id="newsletter" class="container">
-		<div class="title">
-			<h2>Need To Talk?</h2>
-			<span class="byline">Leave a comment and you'll hear from us soon!</span> </div>
-		<div class="content">
-			<form method="post" action="#">
-				<div class="row half">
-					<div class="6u">
-						<input type="text" class="text" name="name" placeholder="Name" />
-					</div>
-					<div class="6u">
-						<input type="text" class="text" name="email" placeholder="Email" />
-					</div>
-				</div>
-				<div class="row half">
-					<div class="12u">
-						<textarea name="message" placeholder="Message"></textarea>
-					</div>
-				</div>
-				<div class="row">
-					<div class="12u"> <a href="#" class="button submit">Send Message</a> </div>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
+
 <div id="copyright">
 	<p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
 </div>
