@@ -1,7 +1,6 @@
 package com.revature.beans;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,11 +15,11 @@ public class Manager {
 		
 	}
 
-	public long getClient_id() {
+	public long getManager_id() {
 		return manager_id;
 	}
 
-	public void setClient_id(long client_id) {
+	public void setManager_id(long client_id) {
 		this.manager_id = client_id;
 	}
 

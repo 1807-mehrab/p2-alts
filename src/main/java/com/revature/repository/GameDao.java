@@ -3,6 +3,7 @@ package com.revature.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -29,6 +30,13 @@ public class GameDao {
 	public Game getGameById(long id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Game) s.get(Game.class, id);
+	}
+
+	public Game getGameByTitle(String title) {
+		Session s = sessionFactory.getCurrentSession();
+		Query q = s.createQuery("from Game where title = :title");
+		q.setParameter("title", title);
+		return (Game) q.uniqueResult();
 	}
 
 	public void addGame(Game game) {

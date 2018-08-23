@@ -42,4 +42,9 @@ public class ReportService {
 	public Report update(Report report) {
 		return dao.updateReport(report);
 	}
+
+	@Transactional
+	public Report getByTitle(String title) {
+		return dao.getReportByTitle(title);
+	}
 }

@@ -42,4 +42,9 @@ public class GameService {
 	public Game update(Game game) {
 		return dao.updateGame(game);
 	}
+
+	@Transactional
+	public Game getByTitle(String title) {
+		return dao.getGameByTitle(title);
+	}
 }

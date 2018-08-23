@@ -30,11 +30,12 @@ public class ManagerController {
 	public Manager byId(@PathVariable("id") long id) {
 		return service.getById(id);
 	}
-	
+
 	@GetMapping(path = "/manager/{username}/{password}")
-	public @ResponseBody ResponseEntity<Manager> byUsername(@PathVariable("username") String username, @PathVariable("password") String password) {
+	public @ResponseBody ResponseEntity<Manager> byUsername(@PathVariable("username") String username,
+			@PathVariable("password") String password) {
 		Manager manager = service.getByUsernameAndPassword(username, password);
-		if(manager == null)
+		if (manager == null)
 			return new ResponseEntity<Manager>(HttpStatus.NOT_FOUND);
 		else
 			return new ResponseEntity<Manager>(manager, HttpStatus.OK);
@@ -61,28 +62,26 @@ public class ManagerController {
 		service.delete(manager);
 		return new ResponseEntity<Manager>(HttpStatus.NO_CONTENT);
 	}
-	
+
 	@PutMapping(path = "/manager/{id}", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<Manager> updateUser(@PathVariable("id") long id, @RequestBody Manager manager) {
-        System.out.println("Updating User " + id);
-         
-        Manager currentManager = service.getById(id);
-         
-        if (currentManager==null) {
-            return new ResponseEntity<Manager>(HttpStatus.NOT_FOUND);
-        }
- 
-        ManagerController.populate(currentManager, manager);
-        
-        service.update(currentManager);
-        return new ResponseEntity<Manager>(currentManager, HttpStatus.OK);
-    }
-	
+		Manager currentManager = service.getById(id);
+
+		if (currentManager == null) {
+			return new ResponseEntity<Manager>(HttpStatus.NOT_FOUND);
+		}
+
+		ManagerController.populate(currentManager, manager);
+
+		service.update(currentManager);
+		return new ResponseEntity<Manager>(currentManager, HttpStatus.OK);
+	}
+
 	protected static void populate(Manager currentManager, Manager manager) {
 		currentManager.setFname(manager.getFname());
-        currentManager.setLname(manager.getLname());
-        currentManager.setEmail(manager.getEmail());
-        currentManager.setPassword(manager.getPassword());
-        currentManager.setUsername(manager.getUsername());
+		currentManager.setLname(manager.getLname());
+		currentManager.setEmail(manager.getEmail());
+		currentManager.setPassword(manager.getPassword());
+		currentManager.setUsername(manager.getUsername());
 	}
 }

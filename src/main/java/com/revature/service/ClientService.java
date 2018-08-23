@@ -47,4 +47,8 @@ public class ClientService {
 	public Client update(Client client) {
 		return dao.updateClient(client);
 	}
+
+	public Client getByUsernameAndPassword(String username, String password) {
+		return dao.getByUsernameAndPassword(username, password);
+	}
 }

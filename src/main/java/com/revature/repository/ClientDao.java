@@ -40,6 +40,14 @@ public class ClientDao {
 		return (Client) q.uniqueResult();
 	}
 
+	public Client getByUsernameAndPassword(String username, String password) {
+		Session s = sessionFactory.getCurrentSession();
+		Query q = s.createQuery("from Client where username = :username and password = :password");
+		q.setParameter("username", username);
+		q.setParameter("password", password);
+		return (Client) q.uniqueResult();
+	}
+
 	public void addClient(Client client) {
 		sessionFactory.getCurrentSession().persist(client);
 	}

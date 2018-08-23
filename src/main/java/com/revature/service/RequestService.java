@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.revature.beans.Client;
 import com.revature.beans.Request;
 import com.revature.repository.RequestDao;
 
@@ -41,5 +42,9 @@ public class RequestService {
 	@Transactional
 	public Request update(Request request) {
 		return dao.updateRequest(request);
+	}
+
+	public Request getByTitleAndClient(String title, Client client) {
+		return dao.getRequestByTitleAndClient(title, client);
 	}
 }
