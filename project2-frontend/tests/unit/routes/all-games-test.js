@@ -5,7 +5,7 @@ module('Unit | Route | all-games', function(hooks) {
   setupTest(hooks);
 
   test('it exists', function(assert) {
-    let route = this.owner.lookup('route:all-games');
+    let route = this.owner.lookup('route:games');
     assert.ok(route);
   });
 });

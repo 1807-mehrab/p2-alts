@@ -13,6 +13,10 @@ Router.map(function() {
   this.route('profile');
   this.route('sell-game');
   this.route('cart');
+  this.route('manager-profile');
+  this.route('manager-all-games');
+  this.route('view-all-clients');
 });
 
 export default Router;
+
