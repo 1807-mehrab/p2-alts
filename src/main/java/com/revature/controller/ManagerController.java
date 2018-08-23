@@ -63,13 +63,17 @@ public class ManagerController {
             return new ResponseEntity<Manager>(HttpStatus.NOT_FOUND);
         }
  
-        currentManager.setFname(manager.getFname());
+        ManagerController.populate(currentManager, manager);
+        
+        service.update(currentManager);
+        return new ResponseEntity<Manager>(currentManager, HttpStatus.OK);
+    }
+	
+	protected static void populate(Manager currentManager, Manager manager) {
+		currentManager.setFname(manager.getFname());
         currentManager.setLname(manager.getLname());
         currentManager.setEmail(manager.getEmail());
         currentManager.setPassword(manager.getPassword());
         currentManager.setUsername(manager.getUsername());
-
-        service.update(currentManager);
-        return new ResponseEntity<Manager>(currentManager, HttpStatus.OK);
-    }
+	}
 }
