@@ -15,7 +15,7 @@ Router.map(function() {
   this.route('cart');
   this.route('manager-profile');
   this.route('manager-all-games');
-  this.route('view-all-clients');
+  this.route('view-all-clients', {path: '/clients'});
 });
 
 export default Router;
