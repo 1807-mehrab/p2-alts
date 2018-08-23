@@ -27,7 +27,7 @@ public class ReportDao {
 		}
 	}
 
-	public Report getReportById(int id) {
+	public Report getReportById(long id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Report) s.get(Report.class, id);
 	}
@@ -59,10 +59,5 @@ public class ReportDao {
 		tx.commit();
 
 		return r;
-	}
-
-	public Report getReportById(long id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

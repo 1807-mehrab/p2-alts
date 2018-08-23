@@ -28,7 +28,7 @@ public class EmployeeDao {
 		}
 	}
 
-	public Employee getEmployeeById(int id) {
+	public Employee getEmployeeById(long id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Employee) s.get(Employee.class, id);
 	}
@@ -68,10 +68,5 @@ public class EmployeeDao {
 		tx.commit();
 
 		return e;
-	}
-
-	public Employee getEmployeeById(long id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

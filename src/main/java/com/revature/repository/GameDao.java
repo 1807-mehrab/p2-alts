@@ -27,7 +27,7 @@ public class GameDao {
 		}
 	}
 
-	public Game getGameById(int id) {
+	public Game getGameById(long id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Game) s.get(Game.class, id);
 	}
@@ -59,10 +59,5 @@ public class GameDao {
 		tx.commit();
 
 		return g;
-	}
-
-	public Game getGameById(long id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

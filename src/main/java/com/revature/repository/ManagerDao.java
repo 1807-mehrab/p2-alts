@@ -28,7 +28,7 @@ public class ManagerDao {
 		}
 	}
 
-	public Manager getManagerById(int id) {
+	public Manager getManagerById(long id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Manager) s.get(Manager.class, id);
 	}
@@ -78,10 +78,5 @@ public class ManagerDao {
 		tx.commit();
 
 		return m;
-	}
-
-	public Manager getManagerById(long id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

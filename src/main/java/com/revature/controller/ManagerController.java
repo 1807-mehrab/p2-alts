@@ -21,4 +21,9 @@ public class ManagerController {
 	public Manager byId(@PathVariable("id") long id) {
 		return service.getById(id);
 	}
+	
+	@GetMapping("/test")
+	public String test() {
+		return service.getById(1).toString();
+	}
 }

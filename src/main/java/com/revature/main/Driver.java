@@ -12,7 +12,7 @@ public class Driver {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(HibernateConfig.class);
 		
 		ManagerService caveService = context.getBean("managerService", ManagerService.class);
-		System.out.println(caveService.getAll());
+		System.out.println(caveService.getById(1));
 		
 		context.close();
 	}
