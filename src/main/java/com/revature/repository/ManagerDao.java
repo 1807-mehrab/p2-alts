@@ -40,6 +40,14 @@ public class ManagerDao {
 		return (Manager) q.uniqueResult();
 	}
 
+	public Manager getManagerByUsernameAndPassword(String username, String password) {
+		Session s = sessionFactory.getCurrentSession();
+		Query q = s.createQuery("from Manager where username = :username and password = :password");
+		q.setParameter("username", username);
+		q.setParameter("password", password);
+		return (Manager) q.uniqueResult();
+	}
+
 	public void addManager(Manager manager) {
 		sessionFactory.getCurrentSession().persist(manager);
 	}

@@ -47,4 +47,9 @@ public class ManagerService {
 	public Manager update(Manager manager) {
 		return dao.updateManager(manager);
 	}
+
+	@Transactional
+	public Manager getByUsernameAndPassword(String username, String password) {
+		return dao.getManagerByUsernameAndPassword(username, password);
+	}
 }

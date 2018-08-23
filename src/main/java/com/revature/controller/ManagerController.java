@@ -30,6 +30,15 @@ public class ManagerController {
 	public Manager byId(@PathVariable("id") long id) {
 		return service.getById(id);
 	}
+	
+	@GetMapping(path = "/manager/{username}/{password}")
+	public @ResponseBody ResponseEntity<Manager> byUsername(@PathVariable("username") String username, @PathVariable("password") String password) {
+		Manager manager = service.getByUsernameAndPassword(username, password);
+		if(manager == null)
+			return new ResponseEntity<Manager>(HttpStatus.NOT_FOUND);
+		else
+			return new ResponseEntity<Manager>(manager, HttpStatus.OK);
+	}
 
 	@GetMapping("/manager")
 	public List<Manager> managers() {
