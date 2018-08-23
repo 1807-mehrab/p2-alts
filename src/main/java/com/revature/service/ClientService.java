@@ -34,7 +34,7 @@ public class ClientService {
 	}
 
 	@Transactional
-	public Client getById(int id) {
+	public Client getById(long id) {
 		return dao.getClientById(id);
 	}
 

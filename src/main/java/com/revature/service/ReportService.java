@@ -34,7 +34,7 @@ public class ReportService {
 	}
 
 	@Transactional
-	public Report getById(int id) {
+	public Report getById(long id) {
 		return dao.getReportById(id);
 	}
 

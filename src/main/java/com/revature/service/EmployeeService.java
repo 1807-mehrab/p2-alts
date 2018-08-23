@@ -34,7 +34,7 @@ public class EmployeeService {
 	}
 
 	@Transactional
-	public Employee getById(int id) {
+	public Employee getById(long id) {
 		return dao.getEmployeeById(id);
 	}
 	

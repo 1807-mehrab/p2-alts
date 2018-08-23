@@ -28,7 +28,7 @@ public class ClientDao {
 		}
 	}
 
-	public Client getClientById(int id) {
+	public Client getClientById(long id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Client) s.get(Client.class, id);
 	}

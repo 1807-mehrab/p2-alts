@@ -34,7 +34,7 @@ public class RequestService {
 	}
 
 	@Transactional
-	public Request getById(int id) {
+	public Request getById(long id) {
 		return dao.getRequestById(id);
 	}
 

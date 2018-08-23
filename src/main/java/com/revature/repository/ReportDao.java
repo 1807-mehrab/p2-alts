@@ -6,9 +6,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Report;
 
+@Repository
 public class ReportDao {
 	private SessionFactory sessionFactory;
 
@@ -57,5 +59,10 @@ public class ReportDao {
 		tx.commit();
 
 		return r;
+	}
+
+	public Report getReportById(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

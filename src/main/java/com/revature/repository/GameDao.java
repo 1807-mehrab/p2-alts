@@ -6,9 +6,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Game;
 
+@Repository
 public class GameDao {
 	private SessionFactory sessionFactory;
 
@@ -57,5 +59,10 @@ public class GameDao {
 		tx.commit();
 
 		return g;
+	}
+
+	public Game getGameById(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

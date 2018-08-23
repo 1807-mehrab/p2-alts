@@ -34,7 +34,7 @@ public class ManagerService {
 	}
 	
 	@Transactional
-	public Manager getById(int id) {
+	public Manager getById(long id) {
 		return dao.getManagerById(id);
 	}
 	

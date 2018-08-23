@@ -6,9 +6,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Request;
 
+@Repository
 public class RequestDao {
 	private SessionFactory sessionFactory;
 
@@ -25,7 +27,7 @@ public class RequestDao {
 		}
 	}
 
-	public Request getRequestById(int id) {
+	public Request getRequestById(long id) {
 		Session s = sessionFactory.getCurrentSession();
 		return (Request) s.get(Request.class, id);
 	}

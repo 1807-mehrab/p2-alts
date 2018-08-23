@@ -7,9 +7,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Employee;
 
+@Repository
 public class EmployeeDao {
 	private SessionFactory sessionFactory;
 
@@ -66,5 +68,10 @@ public class EmployeeDao {
 		tx.commit();
 
 		return e;
+	}
+
+	public Employee getEmployeeById(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

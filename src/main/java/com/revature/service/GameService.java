@@ -34,7 +34,7 @@ public class GameService {
 	}
 
 	@Transactional
-	public Game getById(int id) {
+	public Game getById(long id) {
 		return dao.getGameById(id);
 	}
 
