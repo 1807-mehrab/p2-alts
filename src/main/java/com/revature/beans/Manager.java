@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Table
 public class Manager {
 	@Id
-	@GeneratedValue
 	private long manager_id;
 	private String username, fname, lname, email, password;
 	

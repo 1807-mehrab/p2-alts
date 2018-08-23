@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Request;
@@ -33,31 +32,14 @@ public class RequestDao {
 	}
 
 	public void addRequest(Request request) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.persist(request);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().persist(request);
 	}
 
 	public void deleteRequest(Request request) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.delete(request);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().delete(request);
 	}
 
 	public Request updateRequest(Request request) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		Request r = (Request) s.merge(request);
-
-		tx.commit();
-
-		return r;
+		return (Request) sessionFactory.getCurrentSession().merge(request);
 	}
 }

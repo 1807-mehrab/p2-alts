@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Client;
@@ -42,31 +41,14 @@ public class ClientDao {
 	}
 
 	public void addClient(Client client) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.persist(client);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().persist(client);
 	}
 
 	public void deleteClient(Client client) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.delete(client);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().delete(client);
 	}
 
 	public Client updateClient(Client client) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		Client c = (Client) s.merge(client);
-
-		tx.commit();
-
-		return c;
+		return (Client) sessionFactory.getCurrentSession().merge(client);
 	}
 }

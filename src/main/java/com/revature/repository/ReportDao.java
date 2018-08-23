@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Report;
@@ -33,31 +32,14 @@ public class ReportDao {
 	}
 
 	public void addReport(Report report) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.persist(report);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().persist(report);
 	}
 
 	public void deleteReport(Report report) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.delete(report);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().delete(report);
 	}
 
 	public Report updateReport(Report report) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		Report r = (Report) s.merge(report);
-
-		tx.commit();
-
-		return r;
+		return (Report) sessionFactory.getCurrentSession().merge(report);
 	}
 }

@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Game;
@@ -33,31 +32,14 @@ public class GameDao {
 	}
 
 	public void addGame(Game game) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.persist(game);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().persist(game);
 	}
 
 	public void deleteGame(Game game) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.delete(game);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().delete(game);
 	}
 
 	public Game updateGame(Game game) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		Game g = (Game) s.merge(game);
-
-		tx.commit();
-
-		return g;
+		return (Game) sessionFactory.getCurrentSession().merge(game);
 	}
 }

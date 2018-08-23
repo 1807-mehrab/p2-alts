@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.revature.beans.Manager;
@@ -42,21 +41,11 @@ public class ManagerDao {
 	}
 
 	public void addManager(Manager manager) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.persist(manager);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().persist(manager);
 	}
 
 	public void deleteManager(Manager manager) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		s.delete(manager);
-
-		tx.commit();
+		sessionFactory.getCurrentSession().delete(manager);
 	}
 
 	/*
@@ -70,13 +59,6 @@ public class ManagerDao {
 	 * https://www.baeldung.com/hibernate-save-persist-update-merge-saveorupdate)
 	 */
 	public Manager updateManager(Manager manager) {
-		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-
-		Manager m = (Manager) s.merge(manager);
-
-		tx.commit();
-
-		return m;
+		return (Manager) sessionFactory.getCurrentSession().merge(manager);
 	}
 }
