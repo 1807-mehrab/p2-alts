@@ -3,7 +3,6 @@ package com.revature.beans;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -12,7 +11,6 @@ import javax.persistence.Table;
 @Table
 public class Report {
 	@Id
-	@GeneratedValue
 	private long report_id;
 	private String title, body, response;
 	private Date datereported, dateresolved;

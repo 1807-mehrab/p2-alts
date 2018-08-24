@@ -1,7 +1,6 @@
 package com.revature.beans;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +8,6 @@ import javax.persistence.Table;
 @Table
 public class Game {
 	@Id
-	@GeneratedValue
 	private long game_id;
 	private String title, price, photo;
 	private int copies;
