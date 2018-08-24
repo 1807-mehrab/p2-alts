@@ -5,6 +5,8 @@ IDENTIFIED BY  p4ssw0rd;
 
 GRANT connect, resource, create session, create view, create table to gamestoredb;
 
+GRANT unlimited tablespace to gamestoredb;
+
 conn gamestoredb/p4ssw0rd;
 
 CREATE TABLE client (
