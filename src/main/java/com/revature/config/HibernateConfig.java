@@ -16,8 +16,18 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.revature.repository.ClientDao;
+import com.revature.repository.EmployeeDao;
+import com.revature.repository.GameDao;
 import com.revature.repository.ManagerDao;
+import com.revature.repository.ReportDao;
+import com.revature.repository.RequestDao;
+import com.revature.service.ClientService;
+import com.revature.service.EmployeeService;
+import com.revature.service.GameService;
 import com.revature.service.ManagerService;
+import com.revature.service.ReportService;
+import com.revature.service.RequestService;
 
 @Configuration
 @ComponentScan("com.revature")
@@ -60,13 +70,13 @@ public class HibernateConfig {
 			}
 		};
 	}
-	
+
 	@Bean
 	@Autowired
 	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager tm = new HibernateTransactionManager();
 		tm.setSessionFactory(sessionFactory);
-		
+
 		return tm;
 	}
 
@@ -74,16 +84,95 @@ public class HibernateConfig {
 	public ManagerDao managerDao(SessionFactory sessionFactory) {
 		ManagerDao dao = new ManagerDao();
 		dao.setSessionFactory(sessionFactory);
-		
+
 		return dao;
 	}
-	
+
 	@Bean
 	public ManagerService managerService(ManagerDao dao) {
 		ManagerService service = new ManagerService();
 		service.setDao(dao);
-		
+
 		return service;
 	}
-	
+
+	@Bean
+	public ClientDao clientDao(SessionFactory sessionFactory) {
+		ClientDao dao = new ClientDao();
+		dao.setSessionFactory(sessionFactory);
+
+		return dao;
+	}
+
+	@Bean
+	public ClientService clientService(ClientDao dao) {
+		ClientService service = new ClientService();
+		service.setDao(dao);
+
+		return service;
+	}
+
+	@Bean
+	public EmployeeDao employeeDao(SessionFactory sessionFactory) {
+		EmployeeDao dao = new EmployeeDao();
+		dao.setSessionFactory(sessionFactory);
+
+		return dao;
+	}
+
+	@Bean
+	public EmployeeService employeeService(EmployeeDao dao) {
+		EmployeeService service = new EmployeeService();
+		service.setDao(dao);
+
+		return service;
+	}
+
+	@Bean
+	public GameDao gameDao(SessionFactory sessionFactory) {
+		GameDao dao = new GameDao();
+		dao.setSessionFactory(sessionFactory);
+
+		return dao;
+	}
+
+	@Bean
+	public GameService gameService(GameDao dao) {
+		GameService service = new GameService();
+		service.setDao(dao);
+
+		return service;
+	}
+
+	@Bean
+	public ReportDao reportDao(SessionFactory sessionFactory) {
+		ReportDao dao = new ReportDao();
+		dao.setSessionFactory(sessionFactory);
+
+		return dao;
+	}
+
+	@Bean
+	public ReportService reportService(ReportDao dao) {
+		ReportService service = new ReportService();
+		service.setDao(dao);
+
+		return service;
+	}
+
+	@Bean
+	public RequestDao requestDao(SessionFactory sessionFactory) {
+		RequestDao dao = new RequestDao();
+		dao.setSessionFactory(sessionFactory);
+
+		return dao;
+	}
+
+	@Bean
+	public RequestService requestService(RequestDao dao) {
+		RequestService service = new RequestService();
+		service.setDao(dao);
+
+		return service;
+	}
 }

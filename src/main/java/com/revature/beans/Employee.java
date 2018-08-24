@@ -11,6 +11,10 @@ public class Employee {
 	private long employee_id;
 	private String fname, lname;
 
+	public Employee() {
+		super();
+	}
+
 	public long getEmployee_id() {
 		return employee_id;
 	}

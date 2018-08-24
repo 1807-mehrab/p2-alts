@@ -10,9 +10,9 @@ public class Manager {
 	@Id
 	private long manager_id;
 	private String username, fname, lname, email, password;
-	
+
 	public Manager() {
-		
+		super();
 	}
 
 	public long getManager_id() {

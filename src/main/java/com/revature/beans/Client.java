@@ -11,6 +11,10 @@ public class Client {
 	private long client_id;
 	private String username, fname, lname, email, password;
 
+	public Client() {
+		super();
+	}
+
 	public long getClient_id() {
 		return client_id;
 	}

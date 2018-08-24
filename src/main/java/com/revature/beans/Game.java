@@ -12,6 +12,10 @@ public class Game {
 	private String title, price, photo;
 	private int copies;
 
+	public Game() {
+		super();
+	}
+
 	public long getGame_id() {
 		return game_id;
 	}

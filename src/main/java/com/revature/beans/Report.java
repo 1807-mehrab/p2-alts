@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -15,11 +16,18 @@ public class Report {
 	private String title, body, response;
 	private Date datereported, dateresolved;
 	@ManyToOne
+	@JoinColumn(name = "employee_id")
 	private Employee employee;
 	@ManyToOne
+	@JoinColumn(name = "manager_id")
 	private Manager manager;
 	@ManyToOne
+	@JoinColumn(name = "client_id")
 	private Client client;
+
+	public Report() {
+		super();
+	}
 
 	public long getReport_id() {
 		return report_id;
