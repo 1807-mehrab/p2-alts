@@ -139,20 +139,18 @@ ALTER TABLE request
 
 
 --INSERT DATA
-insert into EMPLOYEES(employee_id,fname,lname) VALUES (1,'Feels','Goodman');
-insert into EMPLOYEES(employee_id,fname,lname) VALUES (1,'Scott','Vegeta');
-insert into EMPLOYEES(employee_id,fname,lname) VALUES (1,'Rex','Havoc');
+insert into EMPLOYEE(employee_id,fname,lname) VALUES (1,'Feels','Goodman');
+insert into EMPLOYEE(employee_id,fname,lname) VALUES (1,'Scott','Vegeta');
+insert into EMPLOYEE(employee_id,fname,lname) VALUES (1,'Rex','Havoc');
 
-insert into MANAGERS(manager_id,username,fname,lname,email,password) VALUES (1,'anime','Reginald','Anime','anime@gmail.com','admin1');
-insert into MANAGERS(manager_id,username,fname,lname,email,password) VALUES (1,'martin','Superb','Martin','martin@gmail.com','admin2');
+insert into MANAGER(manager_id,username,fname,lname,email,password) VALUES (1,'anime','Reginald','Anime','anime@gmail.com','admin1');
+insert into MANAGER(manager_id,username,fname,lname,email,password) VALUES (2,'martin','Superb','Martin','martin@gmail.com','admin2');
 
-insert into CLIENTS(client_id,username,fname,lname,email,password) VALUES (1,'treviere08','Tim','Reviere','treviere08@gmail.com','guest1');
-insert into CLIENTS(client_id,username,fname,lname,email,password) VALUES (1,'leigh09','Leigh','Miller','lmiller0908@gmail.com','guest2');
-insert into CLIENTS(client_id,username,fname,lname,email,password) VALUES (1,'ajuby10','Andrew','Juby','ajuby10@gmail.com','guest3');
-insert into CLIENTS(client_id,username,fname,lname,email,password) VALUES (1,'schang11','Smyth','Chang','schang11@gmail.com','guest4');
+insert into CLIENT(client_id,username,fname,lname,email,password) VALUES (1,'treviere08','Tim','Reviere','treviere08@gmail.com','guest1');
+insert into CLIENT(client_id,username,fname,lname,email,password) VALUES (2,'leigh09','Leigh','Miller','lmiller0908@gmail.com','guest2');
+insert into CLIENT(client_id,username,fname,lname,email,password) VALUES (3,'ajuby10','Andrew','Juby','ajuby10@gmail.com','guest3');
+insert into CLIENT(client_id,username,fname,lname,email,password) VALUES (4,'schang11','Smyth','Chang','schang11@gmail.com','guest4');
 
-insert into REPORTS(report_id,title,body,datereported,dateresolved,response,employee_id,manager_id,client_id) values (1,'SSBU Delayed Shipment','Shipment of customer purchase has been delayed by 3 days.',CURRENT_DATE,CURRENT_DATE,'Pending',2,2,2);
-insert into REPORTS(report_id,title,body,datereported,dateresolved,response,employee_id,manager_id,client_id) values (2,'Refund Request','Customer is requesting refund of purchased Marves''l Spider-Man due to disc damage.',CURRENT_DATE,CURRENT_DATE,'Pending',3,2,3);
-insert into REPORTS(report_id,title,body,datereported,dateresolved,response,employee_id,manager_id,client_id) values (3,'Trade Request','Customer wishes to exchange Marves''l Spider-Man with SSBU.',CURRENT_DATE,CURRENT_DATE,'Pending',2,1,4);
-insert into REPORTS(report_id,title,body,datereported,dateresolved,response,employee_id,manager_id,client_id) values (4,'Customer Login Info Recovery','Customer needs to recover login information.',CURRENT_DATE,CURRENT_DATE,'Pending',1,1,1);
+insert into REPORT(report_id,title,body,datereported,dateresolved,response,employee_id,manager_id,client_id) values (1,'SSBU Delayed Shipment','Shipment of customer purchase has been delayed by 3 days.',CURRENT_DATE,CURRENT_DATE,'Pending',2,2,2);
+insert into REPORT(report_id,title,body,datereported,dateresolved,response,employee_id,manager_id,client_id) values (2,'Refund Request','Customer is requesting refund of purchased Marves''l Spider-Man due to disc damage.',CURRENT_DATE,CURRENT_DATE,'Pending',3,2,3);
 
